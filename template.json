@@ -1,0 +1,54 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "principalId": {
+            "type": "string",
+            "defaultValue": "ee70552c-f7b5-480d-9800-e5bb529a004a",
+            "metadata": {
+                "description": "The principal to assign the role to"
+            }
+        },
+        "builtInRoleType": {
+            "type": "string",
+            "defaultValue": "AcrPull",
+            "allowedValues": [
+                "AcrPull"
+            ],
+            "metadata": {
+                "description": "Built-in role to assign"
+            }
+        }
+    },
+    "variables": {
+        "AcrPull": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', '7f951dda-4ed3-4680-a7ca-43fe172d538d')]",
+        "deploymentUrlBase": "https://raw.githubusercontent.com/SkillsFundingAgency/das-platform-building-blocks/DASD-8786_ACR_Role_assignment/templates/",
+        "resourceGroupName": "das-dev-aks-rg"
+    },
+    "resources": [
+        {
+            "apiVersion": "2020-06-01",
+            "name": "role-assignment",
+            "resourceGroup": "[variables('resourceGroupName')]",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[concat(variables('deploymentUrlBase'),'role-assignments/role-assignment-container-registry.json')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "assignmentType": {
+                        "value": "AcrPull"
+                    },
+                    "resourceName": {
+                        "value": "dasdevsharedacr"
+                    },
+                    "scope": {
+                        "value": "Microsoft.ContainerRegistry/registries/dasdevsharedacr"
+                    }
+                }
+            }
+        }
+    ]
+}
