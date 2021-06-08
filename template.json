@@ -22,7 +22,7 @@
     },
     "variables": {
         "AcrPull": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', '7f951dda-4ed3-4680-a7ca-43fe172d538d')]",
-        "deploymentUrlBase": "https://raw.githubusercontent.com/v-tebe/azure/51efacfd84afbc5f8001ae18bda6b1f2d70660e9/",
+        "deploymentUrlBase": "https://raw.githubusercontent.com/v-tebe/azure/main/",
         "resourceGroupName": "das-dev-aks-rg"
     },
     "resources": [
