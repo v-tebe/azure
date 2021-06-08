@@ -22,7 +22,7 @@
     },
     "variables": {
         "AcrPull": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', '7f951dda-4ed3-4680-a7ca-43fe172d538d')]",
-        "deploymentUrlBase": "https://raw.githubusercontent.com/SkillsFundingAgency/das-platform-building-blocks/DASD-8786_ACR_Role_assignment/templates/",
+        "deploymentUrlBase": "https://github.com/tejasribe/azure/blob/main/",
         "resourceGroupName": "das-dev-aks-rg"
     },
     "resources": [
@@ -34,7 +34,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[concat(variables('deploymentUrlBase'),'role-assignments/role-assignment-container-registry.json')]",
+                    "uri": "[concat(variables('deploymentUrlBase'),'template.json')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
