@@ -42,10 +42,10 @@
                         "value": "AcrPull"
                     },
                     "resourceName": {
-                        "value": "dasdevsharedacr"
+                        "value": "dasdevsharedacr1"
                     },
                     "scope": {
-                        "value": "Microsoft.ContainerRegistry/registries/dasdevsharedacr"
+                        "value": "Microsoft.ContainerRegistry/registries/dasdevsharedacr1"
                     }
                 }
             }
