@@ -1,5 +1,5 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "assignmentType": {
@@ -10,10 +10,10 @@
         },
         "resourceName": {
             "type": "string"
-        },
-        "principalId": {
-            "type": "string"
         }
+        "resourceGroupName": {
+            "type": "string"
+        
     },
     "variables": {
         "AcrPull": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', '7f951dda-4ed3-4680-a7ca-43fe172d538d')]"
@@ -25,7 +25,7 @@
             "name": "[concat(parameters('resourceName'), '/Microsoft.Authorization/', guid(uniqueString(parameters('principalId'))))]",
             "properties": {
                 "roleDefinitionId": "[variables(parameters('assignmentType'))]",
-                "principalId": "[parameters('principalId')]"
+                "principalId": "[reference(concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/',variables('resourceGroupName'),'/providers/Microsoft.ContainerRegistry/registries/',variables('acrServiceName')), '2020-11-01-preview', 'Full').identity.principalId]"
             }
         }
     ]
