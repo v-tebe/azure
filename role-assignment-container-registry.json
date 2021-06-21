@@ -12,7 +12,7 @@
             "type": "string"
         },
         "principalId": {
-            "type": "string"
+            "type": "object"
         }
     },
     "variables": {
