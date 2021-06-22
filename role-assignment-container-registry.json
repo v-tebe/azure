@@ -27,7 +27,7 @@
             "name": "[concat(parameters('resourceName'), '/Microsoft.Authorization/', guid(uniqueString('7f951dda-4ed3-4680-a7ca-43fe172d538d')))]",
             "properties": {
                 "roleDefinitionId": "[variables(parameters('assignmentType'))]",
-                "principalId":  "[reference(concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/',variables('resourceGroupName'),'/providers/Microsoft.ContainerRegistry/registries/',variables('resourceName')), '2020-11-01-preview', 'Full').identity.principalId]"
+                "principalId":  "[reference(concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.ContainerRegistry/registries/',parameters('resourceName')), '2020-11-01-preview', 'Full').identity.principalId]"
             }
         }
     ]
