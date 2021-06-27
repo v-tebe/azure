@@ -12,7 +12,7 @@
             "type": "string"
         },
         "principalId": {
-            "type": "string"
+            "type": "object"
         }
     },
     "variables": {
@@ -22,10 +22,10 @@
         {
             "type": "Microsoft.ContainerRegistry/registries/providers/roleAssignments",
             "apiVersion": "2021-04-01-preview",
-            "name": "[concat(parameters('resourceName'), '/Microsoft.Authorization/', guid(uniqueString(parameters('principalId'))))]",
+            "name": "[concat(parameters('resourceName'), '/Microsoft.Authorization/', guid(uniqueString(string(parameters('principalId')))))]",
             "properties": {
                 "roleDefinitionId": "[variables(parameters('assignmentType'))]",
-                "principalId": "[parameters('principalId')]"
+                "principalId": "[string(parameters('principalId'))]"
             }
         }
     ]
