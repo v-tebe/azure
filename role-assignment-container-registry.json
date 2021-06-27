@@ -27,7 +27,7 @@
             "name": "[concat(parameters('resourceName'), '/Microsoft.Authorization/', guid(uniqueString('7f951dda-4ed3-4680-a7ca-43fe172d538d')))]",
             "properties": {
                 "roleDefinitionId": "[variables(parameters('assignmentType'))]",
-                "principalId":  "[reference(concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', 'assdfsdf', '/Microsoft.ManagedIdentity/userAssignedIdentities/', 'managedidentity'), '2020-11-01-preview', 'Full').identity.principalId]"
+                "principalId":  "261ead94-5000-4a83-8dc4-ce9da83d99c6"
             }
         }
     ]
