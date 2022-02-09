@@ -12,7 +12,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "children/nestedChild.json"
+          "relativePath": "children/nestedChild.json"
         }
       }
     }
