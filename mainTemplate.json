@@ -16,11 +16,5 @@
         }
       }
     }
-  ],
-  "outputs": {
-    "fromSibling": {
-      "type": "string",
-      "value": "[reference('siblingLinked').outputs.fromChild.value]"
-    }
-  }
+  ]
 }
