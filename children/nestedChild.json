@@ -4,11 +4,23 @@
   "parameters": {},
   "functions": [],
   "variables": {},
-  "resources": [],
+  "resources": [
+    {
+      "name": "grandChildLinked",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2021-04-01",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "relativePath": "grandchildren/nestedGrandchild.json"
+        }
+      }
+    }
+  ],
   "outputs": {
-    "grandChild": {
+    "fromGrandChild": {
       "type": "string",
-      "value": "grandChild"
+      "value": "[reference('grandChildLinked').outputs.grandChild.value]"
     }
   }
 }
