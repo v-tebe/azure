@@ -12,7 +12,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "https://raw.githubusercontent.com/v-tebe/azure/main/children/grandchildren/nestedGrandchild.json"
+          "uri": "grandchildren/nestedGrandchild.json"
         }
       }
     }
