@@ -44,11 +44,7 @@
       }
     },
     "resourceTags": {
-      "type": "object",
-      "defaultValue": {
-        "Environment": "Dev",
-        "Project": "Tutorial"
-      }
+      "type": "object"
     }
   },
   "variables": {
